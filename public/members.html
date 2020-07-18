@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Passport Authentication</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="stylesheets/style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/logout">
+        Logout
+      </a>
+    </div>
+  </div>
+</nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-md-offset-3 ">
+        <h2>Welcome To Smasual, please enter your information below <span class="member-name"></span></h2>
+      </div>
+    </div>
+  </div>
+      <!-- First Name Place Holder -->
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-4">
+      <form>
+        <div class="col m-1 d-flex">
+          <button type="button" class="btn round btn-primary btn-sm round-button m-1">1</button>
+          <input type="text" id="firstName" class="form-control" placeholder="First name">
+        </div>
+      </form>
+    </div>
+   <!-- Gender Selector -->
+    <div class="col-3 m-1 d-flex">
+      <button type="button" class="btn round btn-primary btn-sm round-button m-1">2</button>
+      <select class="custom-select gender">
+        <option selected>My Gender Is</option>
+        <option value="1">Male</option>
+        <option value="2">Female</option>
+        <option value="3">Other</option>
+      </select>
+    </div>
+  </div>
+<br><br>
+<!-- 
+Orientation Selector -->
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-4 m-1 d-flex">
+    <button type="button" class="btn round btn-primary btn-sm round-button m-1">3</button>
+    <select class="custom-select orientation">
+      <option selected>My Sexual Orientation Is</option>
+      <option value="4">Straight</option>
+      <option value="5">Bisexual</option>
+      <option value="6">Lesbian</option>
+      <option value="7">Gay</option>
+    </select>
+  </div>
+  <div class="col-3">
+    <button type="button" class="btn round btn-primary btn-sm round-button m-1">4</button>
+    <label for="birthday">Birthdate:</label>
+    <input type="date" id="birthday" name="birthday">
+  </div>
+</div>
+<br><br>
+<div class="row d-flex">
+  <div class="col-2"></div>
+  <div class="col-6">
+    <div class="form-group">
+      <button type="button" class="btn round btn-primary btn-sm round-button m-1">5</button>
+      <label for="exampleFormControlTextarea1">Enter your short Smasual bio here</label>
+      <textarea class="form-control background-colorz" id="bioDescription" rows="3" placeholder="Enter Your Short Sensual Profile Here"></textarea>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm m-1" id="create">Create</button>
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/create_profile.js"></script>
+</body>
+</html>

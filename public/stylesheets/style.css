@@ -1,0 +1,22 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+.round-button {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border-color: #f72585;
+  color: white;
+  background-color: #f72585;
+}
+.background-colorz {
+border-color: #f72585;
+color: white;
+}
+.background-colorz::placeholder{
+  text-align: center;
+}
+.hide {
+  display: none;
+}
