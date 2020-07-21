@@ -9,14 +9,14 @@ $(document).ready(() => {
     event.preventDefault();
    
     const userData = {
-      firstName: $("#firstName").text(),
-      gender: $(".gender").text(),
-      genderOrientation: $(".orientation").text(),
+      firstName: $("#firstName").val(),
+      gender: $(".gender").val(),
+      genderOrientation: $(".orientation").val(),
       birthday: $("#birthday").val(),
-      biography: $("#bioDescription").text()
+      biography: $("#bioDescription").val()
     };
     if (!userData.firstName || !userData.gender || !userData.genderOrientation || !userData.birthday || !userData.biography) {
-      console.log("inside:" + userData)
+      console.log("inside:" + JSON.stringify(userData))
       return;
     }
    
@@ -26,7 +26,7 @@ $(document).ready(() => {
   });
 
   function createProfile(firstName, birthday, gender, genderOrientation, biography) {
-    $.put("/api/members", {
+    $.post("/api/members", {
       firstName: firstName,
       birthday: birthday,
       gender: gender,
