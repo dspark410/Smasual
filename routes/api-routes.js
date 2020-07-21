@@ -20,15 +20,10 @@ module.exports = function (app) {
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
     console.log(req.body)
-    db.User.create({
-      email: req.body.email,
-      password: req.body.password,
-      firstName: req.body.firstName,
-      birthday: req.body.birthday,
-      gender: req.body.gender,
-      genderOrientation: req.body.genderOrientation,
-      biography: req.body.biography
-    })
+    db.User.create(
+     req.body
+
+    )
       .then(() => {
         res.redirect(307, "/api/login");
       })
@@ -37,17 +32,10 @@ module.exports = function (app) {
       });
   });
 
-  app.put("/api/members", (req, res) => {
-    db.User.update({
-      firstName: req.body.firstName,
-      birthday: req.body.birthday,
-      gender: req.body.gender,
-      genderOrientation: req.body.genderOrientation,
-      biography: req.body.biography
-    }, {
-      where: {
-        id: req.body.id
-      }
+  app.post("/api/members", (req, res) => {
+    console.log(req.body)
+    db.Profile.create(req.body).then(function(data) {
+      res.json(data)
     })
     })
     // .then(() => {
@@ -77,4 +65,4 @@ app.get("/api/user_data", (req, res) => {
     });
   }
 });
- };
+};
