@@ -14,9 +14,26 @@ form.login {
 border-color: #f72585;
 color: white;
 }
+.background-colorz-2 {
+  border-color: #f72585;
+  color: black;
+  }
 .background-colorz::placeholder{
   text-align: center;
+  animation-name: colorchange;
+  animation-duration: 1s;
 }
-.hide {
-  display: none;
+    @keyframes colorchange {
+      0% { color: white; }
+      50% { color: blue; }
+      100% { color: red; }
+    }
+.background-image {
+  background-image: url(../imgs/sunflower.jpg);
+  color: white;
+}
+.submit-button {
+  animation: colorchange 1s infinite;
+  border-color: #f72585;
+  background-color: #f72585;
 }

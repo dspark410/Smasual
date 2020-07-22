@@ -1,3 +1,5 @@
+//const user = require("../../models/user");
+
 $(document).ready(() => {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -19,6 +21,7 @@ $(document).ready(() => {
       genderOrientation: $(".orientation").val(),
       birthday: $("#birthday").val(),
       biography: $("#bioDescription").val(),
+      zip: $("#zip").val(),
       UserId: ID[0]
     };
     if (
@@ -27,9 +30,10 @@ $(document).ready(() => {
       !userData.genderOrientation ||
       !userData.birthday ||
       !userData.biography || 
-      !userData.UserId
+      !userData.zip ||
+      !userData.UserId 
     ) {
-      console.log("inside:" + JSON.stringify(userData));
+      console.log("must fill out all fields");
       return;
     }
 
@@ -42,6 +46,7 @@ $(document).ready(() => {
       userData.gender,
       userData.genderOrientation,
       userData.biography,
+      userData.zip,
       userData.UserId
     );
   });
@@ -52,6 +57,7 @@ $(document).ready(() => {
     gender,
     genderOrientation,
     biography,
+    zip,
     UserId
   ) {
     $.post("/api/members", {
@@ -60,6 +66,7 @@ $(document).ready(() => {
       gender: gender,
       genderOrientation: genderOrientation,
       biography: biography,
+      zip: zip,
       UserId: UserId
     })
       .then(() => {
