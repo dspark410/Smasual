@@ -16,9 +16,11 @@ app.post("/profiles", function(req, res) {
           genderOrientation: req.body.genderOrientation,
 
         },
-        include: [db.User]
-      }).then(function(results) {
-        res.json(results);
+        include: [db.User],
+        raw: true
+      }).then(function(profiles) {
+        console.log(profiles)
+        res.render("index", {profiles});
       });
     });
 }

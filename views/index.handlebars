@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+  </div>
+  <h1 class="center-group">Profiles</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="devoured">
+        <h2>Profiles</h2>
+        <ul>
+          {{#each profiles}}
+          <li>
+          {{this.firstName}}
+          {{this.birthday}}
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
