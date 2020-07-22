@@ -2,23 +2,27 @@ module.exports = function (sequelize, DataTypes) {
     const Profile = sequelize.define("Profile", {
         firstName: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         birthday: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         gender: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         genderOrientation: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
         },
         biography: {
             type: DataTypes.TEXT,
-            allowNull: true
+            allowNull: false
+        },
+        zip: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
     })
 
