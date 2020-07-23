@@ -8,21 +8,39 @@ $(document).ready(() => {
     ID.push(data.id);
   });
 
+
   const ID = [];
+
+
 
   $("#create").on("click", (event) => {
     event.preventDefault();
 
-    //console.log("UserID: " + ID[0]);
+    const birthday = $("#birthday").val()
+    const userAge = getAge(birthday)
+
+    function getAge(DOB) {
+      var today = new Date();
+      var birthDate = new Date(DOB);
+      var age = today.getFullYear() - birthDate.getFullYear();
+      var m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+          age = age - 1;
+      }
+      return age;
+  }
+    
+    console.log("age: "+userAge)
 
     const userData = {
       firstName: $("#firstName").val(),
       gender: $(".gender").val(),
       genderOrientation: $(".orientation").val(),
-      birthday: $("#birthday").val(),
+      birthday: birthday,
       biography: $("#bioDescription").val(),
       zip: $("#zip").val(),
-      UserId: ID[0]
+      UserId: ID[0],
+      age: userAge
     };
     if (
       !userData.firstName ||
@@ -33,7 +51,7 @@ $(document).ready(() => {
       !userData.zip ||
       !userData.UserId 
     ) {
-      console.log("must fill out all fields");
+      alert("Please fill out all fields");
       return;
     }
 
@@ -47,7 +65,8 @@ $(document).ready(() => {
       userData.genderOrientation,
       userData.biography,
       userData.zip,
-      userData.UserId
+      userData.UserId,
+      userData.age
     );
   });
 
@@ -58,7 +77,8 @@ $(document).ready(() => {
     genderOrientation,
     biography,
     zip,
-    UserId
+    UserId, 
+    age
   ) {
     $.post("/api/members", {
       firstName: firstName,
@@ -67,7 +87,8 @@ $(document).ready(() => {
       genderOrientation: genderOrientation,
       biography: biography,
       zip: zip,
-      UserId: UserId
+      UserId: UserId,
+      age: age
     })
       .then(() => {
         window.location.replace("/home");

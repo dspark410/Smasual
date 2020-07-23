@@ -23,6 +23,10 @@ module.exports = function (sequelize, DataTypes) {
         zip: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        age: {
+            type: DataTypes.INTEGER,
+            allowNull: true
         }
     })
 
