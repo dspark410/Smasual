@@ -1,27 +1,52 @@
-<div class="container">
-  <div class="row">
-  </div>
-  <h1 class="center-group">Profiles</h1>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="devoured">
-        <h2>Profiles</h2>
-        <ul>
-          {{#each profiles}}
-          <li>
-          {{this.firstName}}
-          {{this.birthday}}
-          </li>
 
-          
-         <form method="GET" action="/email">
-           <button type="submit">Email Hot Date</button>
+
+
+  <div class="row">
+    <h1 class="center">Matches</h1>
+  </div>
+  <div class="row">
+
+    <div class="col-2"></div>
+    <div class="col">
+      <ol>
+      {{#each profiles}}
+      <li class='profile-info'>
+        <div class="row d-flex">
+          <section>
+            <p>Name</p>
+            {{this.firstName}}
+          </section>
+          <section>
+            <p>Age</p> 
+            {{this.birthday}}
+          </section>
+          <section>
+            <p>Gender</p>
+            {{this.gender}}
+          </section>
+          <section>
+            <p>Gender Orientation</p>
+            {{this.genderOrientation}}
+          </section>
+          <section>
+            <p>Biography</p>
+            {{this.biography}}
+          </section>
+          {{!-- Come back here for the uploading of a photo --}}
+          <section>
+          <form method="GET" action="/email">
+           <button class="match-button">Match!</button>
          </form> 
-          {{/each}}
+            
+          </section>
+          <br><br><br><br><br>
+        </div>
+      </li>
+      {{/each}}
+    </ol>
 
-
-        </ul>
-      </div>
     </div>
-  </div>
-</div>
+  </div>    
+      
+    
+ 
