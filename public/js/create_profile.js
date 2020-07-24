@@ -1,5 +1,5 @@
 //const user = require("../../models/user");
-
+let imageURL;
 $(document).ready(() => {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -38,6 +38,7 @@ $(document).ready(() => {
       genderOrientation: $(".orientation").val(),
       birthday: birthday,
       biography: $("#bioDescription").val(),
+      // : $("#imageUpload").val(),
       zip: $("#zip").val(),
       UserId: ID[0],
       age: userAge
@@ -49,6 +50,7 @@ $(document).ready(() => {
       !userData.birthday ||
       !userData.biography || 
       !userData.zip ||
+      // !userData.imageUpload ||
       !userData.UserId 
     ) {
       alert("Please fill out all fields");
@@ -65,6 +67,7 @@ $(document).ready(() => {
       userData.genderOrientation,
       userData.biography,
       userData.zip,
+      // userData.imageUpload,
       userData.UserId,
       userData.age
     );
@@ -88,7 +91,8 @@ $(document).ready(() => {
       biography: biography,
       zip: zip,
       UserId: UserId,
-      age: age
+      age: age,
+      imageURL
     })
       .then(() => {
         window.location.replace("/home");
@@ -98,4 +102,38 @@ $(document).ready(() => {
         console.log(err);
       });
   }
+
+
+
+
+
+const storageService = firebase.storage();
+const storageRef = storageService.ref();
+
+document.querySelector(".file-select").addEventListener("change", handleFileUploadChange);
+document.querySelector(".file-submit").addEventListener("click", handleFileUploadSubmit);
+
+let selectedFile;
+function handleFileUploadChange(e) {
+  selectedFile = e.target.files[0];
+}
+
+function handleFileUploadSubmit(e) {
+  const uploadTask = storageRef.child(`images/${selectedFile.name}`).put(selectedFile); //create a child directory called images, and place the file inside this directory
+  uploadTask.on("state_changed", (snapshot) => {
+   
+  // Observe state change events such as progress, pause, and resume
+  }, (error) => {
+    // Handle unsuccessful uploads
+    console.log(error);
+  }, () => {
+     // Do something once upload is complete
+     uploadTask.snapshot.ref.getDownloadURL().then(downloadURL=>{
+      //  console.log(downloadURL);
+      imageURL = downloadURL;
+      const imageEL = $("<img>").attr("src", imageURL); 
+      $("#fileSubmit").append(imageEL);
+     });
+  });
+}
 });

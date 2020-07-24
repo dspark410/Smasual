@@ -87,12 +87,46 @@ Orientation Selector -->
 </div>
 </div>
 <br><br>
+<div class="row d-flex" id="fileSubmit">
+  <div class="col-4"></div>
+  <div class="col-2">
+  <input type="file" id="imageUpload" class="file-select" accept="image/*"/>
+  <button class="file-submit" class="btn btn-primary btn-lg submit-button">Upload image</button>
+</div>
+</div>
+<br><br>
 <div class="row d-flex">
   <div class="col-4"></div>
   <div class="col-2">
     <button type="button" id="create" class="btn btn-primary btn-lg submit-button">Create Profile</button>
   </div>
 </div>
+<br><br>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-storage.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.17.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCOUYpiOJS-HEYhVIj8I-amVAtDz5Ljfc4",
+    authDomain: "smasual.firebaseapp.com",
+    databaseURL: "https://smasual.firebaseio.com",
+    projectId: "smasual",
+    storageBucket: "smasual.appspot.com",
+    messagingSenderId: "776008133001",
+    appId: "1:776008133001:web:d46ca631c4ff2159d2d958",
+    measurementId: "G-JPYWE4XER0"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/create_profile.js"></script>
