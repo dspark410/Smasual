@@ -1,5 +1,5 @@
 //const user = require("../../models/user");
-
+let imageURL;
 $(document).ready(() => {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -8,22 +8,40 @@ $(document).ready(() => {
     ID.push(data.id);
   });
 
+
   const ID = [];
+
+
 
   $("#create").on("click", (event) => {
     event.preventDefault();
 
-    //console.log("UserID: " + ID[0]);
+    const birthday = $("#birthday").val()
+    const userAge = getAge(birthday)
+
+    function getAge(DOB) {
+      var today = new Date();
+      var birthDate = new Date(DOB);
+      var age = today.getFullYear() - birthDate.getFullYear();
+      var m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+          age = age - 1;
+      }
+      return age;
+  }
+    
+    //console.log("age: "+userAge)
 
     const userData = {
       firstName: $("#firstName").val(),
       gender: $(".gender").val(),
       genderOrientation: $(".orientation").val(),
-      birthday: $("#birthday").val(),
+      birthday: birthday,
       biography: $("#bioDescription").val(),
-      biography: $("#imageUpload").val(),
+      // : $("#imageUpload").val(),
       zip: $("#zip").val(),
-      UserId: ID[0]
+      UserId: ID[0],
+      age: userAge
     };
     if (
       !userData.firstName ||
@@ -32,10 +50,10 @@ $(document).ready(() => {
       !userData.birthday ||
       !userData.biography || 
       !userData.zip ||
-      !userData.imageUpload ||
+      // !userData.imageUpload ||
       !userData.UserId 
     ) {
-      console.log("must fill out all fields");
+      alert("Please fill out all fields");
       return;
     }
 
@@ -49,8 +67,9 @@ $(document).ready(() => {
       userData.genderOrientation,
       userData.biography,
       userData.zip,
-      userData.imageUpload,
-      userData.UserId
+      // userData.imageUpload,
+      userData.UserId,
+      userData.age
     );
   });
 
@@ -61,7 +80,8 @@ $(document).ready(() => {
     genderOrientation,
     biography,
     zip,
-    UserId
+    UserId, 
+    age
   ) {
     $.post("/api/members", {
       firstName: firstName,
@@ -70,7 +90,9 @@ $(document).ready(() => {
       genderOrientation: genderOrientation,
       biography: biography,
       zip: zip,
-      UserId: UserId
+      UserId: UserId,
+      age: age,
+      imageURL
     })
       .then(() => {
         window.location.replace("/home");
@@ -99,13 +121,19 @@ function handleFileUploadChange(e) {
 function handleFileUploadSubmit(e) {
   const uploadTask = storageRef.child(`images/${selectedFile.name}`).put(selectedFile); //create a child directory called images, and place the file inside this directory
   uploadTask.on("state_changed", (snapshot) => {
+   
   // Observe state change events such as progress, pause, and resume
   }, (error) => {
     // Handle unsuccessful uploads
     console.log(error);
   }, () => {
      // Do something once upload is complete
-     console.log("success");
+     uploadTask.snapshot.ref.getDownloadURL().then(downloadURL=>{
+      //  console.log(downloadURL);
+      imageURL = downloadURL;
+      const imageEL = $("<img>").attr("src", imageURL); 
+      $("#fileSubmit").append(imageEL);
+     });
   });
 }
 });

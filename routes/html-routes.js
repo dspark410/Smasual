@@ -30,4 +30,12 @@ module.exports = function(app) {
   app.get("/home", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
+
+  app.get("/profiles", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../views/layouts/main.handlebars"));
+  });
+  
+  app.get("/email", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/email.html"));
+  });
 };

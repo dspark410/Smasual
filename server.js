@@ -1,8 +1,11 @@
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
+const exphbs = require("express-handlebars");
+const nodemailer = require("nodemailer")
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
+
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
@@ -19,6 +22,8 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars")
 
 //Handlebars
 // app.engine("handlebars", exphbs({ defaultLayout: "main" }));

@@ -29,11 +29,44 @@ color: white;
       100% { color: red; }
     }
 .background-image {
-  background-image: url(../imgs/sunflower.jpg);
+  background-image: url(../imgs/background.jpg);
   color: white;
 }
 .submit-button {
   animation: colorchange 1s infinite;
   border-color: #f72585;
   background-color: #f72585;
+}
+.center {
+  text-align:center;
+  color: #f72585;
+  flex-grow: 1;
+}
+.main-color{
+  color: #f72585;
+}
+
+.profile-info section {
+  min-width: 100px;
+  margin: 13px;
+}
+.profile-info{
+  list-style-type: none;
+  padding: 38px;
+  background: rgb(0 0 0 / 45%);
+  margin: 50px;
+}
+.background-images-two {
+  background-image: url(../imgs/matchesbackground.jpg);
+  background-size: cover;
+  color: white;
+}
+.match-button {
+  color: white;
+  border-color: #f72585;
+  background-color: #f72585;
+  border-radius: 25px;
+  height: 65px;
+  width: 66px;
+  font-weight: bold;
 }
