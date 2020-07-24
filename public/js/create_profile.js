@@ -33,7 +33,7 @@ $(document).ready(() => {
       !userData.zip ||
       !userData.UserId 
     ) {
-      console.log("must fill out all fields");
+      alert("must fill out all fields");
       return;
     }
 
