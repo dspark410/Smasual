@@ -1,10 +1,8 @@
-
-
-
-  <div class="row">
+ <div class="row">
     <h1 class="center">Matches</h1>
   </div>
   <div class="row">
+
     <div class="col-2"></div>
     <div class="col">
       <ol>
@@ -20,7 +18,7 @@
             {{this.birthday}}
           </section>
           <section>
-            <p>Gender</p>
+            <p>Gender</p>git pull
             {{this.gender}}
           </section>
           <section>
@@ -31,18 +29,23 @@
             <p>Biography</p>
             {{this.biography}}
           </section>
+
           {{!-- Come back here for the uploading of a photo --}}
           <section>
-            <img class"img" src={{this.imageURL}} />
+            <img class"profile-picture" src={{this.imageURL}} />
           </section>
           <section>
-            <button class="match-button">Match!</button>
+          <form method="GET" action="/email">
+           <button class="match-button">Match!</button>
+         </form> 
+            
           </section>
           <br><br><br><br><br>
         </div>
       </li>
       {{/each}}
     </ol>
+
     </div>
   </div>    
       
