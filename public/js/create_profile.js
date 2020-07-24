@@ -103,10 +103,6 @@ $(document).ready(() => {
       });
   }
 
-
-
-
-
 const storageService = firebase.storage();
 const storageRef = storageService.ref();
 
