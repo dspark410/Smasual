@@ -1,4 +1,5 @@
 const db = require("../models");
+const { Op } = require("sequelize");
 
 
 module.exports = function (app) {
@@ -9,12 +10,17 @@ app.post("/profiles", function(req, res) {
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Author
     console.log("req.body"+JSON.stringify(req.body))
+
+
     db.Profile.findAll({
         where: {
           zip: req.body.zip,
           gender: req.body.gender,
           genderOrientation: req.body.genderOrientation,
-
+          age: {
+            [Op.gte]: parseInt(req.body.startAge),
+            [Op.lte]: parseInt(req.body.endAge)
+          }
         },
         include: [db.User],
         raw: true

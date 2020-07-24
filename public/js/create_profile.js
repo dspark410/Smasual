@@ -30,7 +30,7 @@ $(document).ready(() => {
       return age;
   }
     
-    console.log("age: "+userAge)
+    //console.log("age: "+userAge)
 
     const userData = {
       firstName: $("#firstName").val(),
