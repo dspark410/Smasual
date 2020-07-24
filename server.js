@@ -2,8 +2,10 @@
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
+const nodemailer = require("nodemailer")
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
+
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
