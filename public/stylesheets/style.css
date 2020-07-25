@@ -61,7 +61,7 @@ color: white;
   background-size: cover;
   color: white;
 }
-.match-button {
+/* .match-button {
   color: white;
   border-color: #f72585;
   background-color: #f72585;
@@ -69,7 +69,7 @@ color: white;
   height: 65px;
   width: 66px;
   font-weight: bold;
-}
+} */
 
 .profile-picture{
   height: 150px;
