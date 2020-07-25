@@ -70,3 +70,11 @@ color: white;
   width: 66px;
   font-weight: bold;
 }
+
+.modal {
+  color: black;
+}
+
+.hidden {
+  display: none;
+}

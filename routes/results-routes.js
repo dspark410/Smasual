@@ -31,6 +31,24 @@ app.post("/profiles", function(req, res) {
       });
     });
 
+app.get("/findEmail/:rid", function(req,res){
+  db.User.findAll({
+    where: {
+       id: req.params.rid
+    },
+    // include: [db.Profile],
+    raw: true
+  }).then(function(data){
+    console.log(data)
+    res.json({
+      data
+    })
+
+  }) 
+
+
+})
+
 app.post("/email", (req,res) => {
   const output = `
   <p><strong>You have a new smasual!</strong></p>
@@ -54,19 +72,27 @@ app.post("/email", (req,res) => {
   })
 
   let mailOptions = {
-    from: "smasuals@gmail.com", // sender address
-    to: 'dspark410@gmail.com', // list of receivers
+    from: "req.body.from", // sender address
+    to: req.body.remail, // list of receivers
     subject: 'Smasual Contact Request', // Subject line
     html: output // html body
 };
 
 // send mail with defined transport object
-transporter.sendMail(mailOptions, (err, res) => {
-    if (error) {
-        console.log(er);
-    } else {
-      console.log("Email Sent!")
-    }
+transporter.sendMail(mailOptions, (error, info) => {
+  if (error) {
+      return console.log(error);
+  }
+  console.log('Message sent: %s', info.messageId);   
+  console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+
+  console.log("email sent")
+  console.log("remail: " + req.body.remail)
+  res.redirect("/home")
+
 });
+    
 });
 }
+
+

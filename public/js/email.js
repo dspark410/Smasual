@@ -1,12 +1,7 @@
-$(document).ready(() => {
+// $(document).ready(() => {
+    
+//     $("#sendmail").on("click", (event) => {
+//         alert("Email Sent!")
+//     })
 
-  
-    $("#sendhome").on("click", (event) => {
-        
-        window.location.replace("/home");
-    })
-
-    $("#sendmail").on("click", (event) => {
-        alert("Email Sent!")
-    })
-});
+// });

@@ -1,24 +1,28 @@
- <div class="row">
-    <h1 class="center">Matches</h1>
-  </div>
-  <div class="row">
+<div class="row">
+  <h1 class="center">Matches</h1>
+</div>
+<div class="row">
 
-    <div class="col-2"></div>
-    <div class="col">
-      <ol>
+  <div class="col-2"></div>
+  <div class="col">
+    
+    <ol>
+      
       {{#each profiles}}
       <li class='profile-info'>
+        
         <div class="row d-flex">
+          
           <section>
             <p>Name</p>
             {{this.firstName}}
           </section>
           <section>
-            <p>Age</p> 
+            <p>Age</p>
             {{this.birthday}}
           </section>
           <section>
-            <p>Gender</p>git pull
+            <p>Gender</p>
             {{this.gender}}
           </section>
           <section>
@@ -29,25 +33,90 @@
             <p>Biography</p>
             {{this.biography}}
           </section>
-
-          {{!-- Come back here for the uploading of a photo --}}
           <section>
             <img class"profile-picture" src={{this.imageURL}} />
           </section>
           <section>
-          <form method="GET" action="/email">
-           <button class="match-button">Match!</button>
-         </form> 
-            
+
+            <button data-toggle="modal" data-target="#exampleModal" data-rid={{this.UserId}}
+              class="match-button">Match!</button>
+
           </section>
           <br><br><br><br><br>
         </div>
       </li>
       {{/each}}
     </ol>
+  </div>
+</div>
 
+<div id="exampleModal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Email Hot Date</h3>
+       
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="contact">
+          <form method="POST" action="email">
+            <p>
+              <label>Your Name</label>
+              <input id="name" type="text" name="name">
+            </p>
+           
+           <p class="hidden">
+              <label>Smashee's Email</label>
+              <input id="remail" class="remail" type="text" name="remail">
+            </p>
+
+            <p>
+              <label>Your Phone Number</label>
+              <input id="phone" type="text" name="phone">
+            </p>
+            <p class="full">
+              <label>Message</label>
+              <textarea id="message" name="message" rows="5"></textarea>
+            </p>
+            <p class="full">
+              <button action="/home" id="sendmail" type="submit">Submit</button>
+            </p>
+          </form>
+
+        </div>
+      </div>
     </div>
-  </div>    
+   
+  </div>
+</div>
+</div>
+
+<script>
+  $(document).ready(() => {
+    const RID = []
+
+    $(".match-button").on("click", function () {
+      rid = $(this).data("rid");
+      RID.push(rid)
+      console.log(RID)
+
+    $.get("/findEmail/" + RID[0]).then((data) => {
       
+      $(".remail").val(data.data[0].email) 
+
+        
+    })
+  });
+
     
- 
+  
+  })
+</script>
+{{!-- <script src="..public/js/email.js" type="text/javascript"></script> --}}
+
+  {{!-- $("#sendmail").on("click", function () {
+      alert("Email Sent!")
+    }) --}}
