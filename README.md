@@ -3,7 +3,7 @@
 
 ##Want to find the perfect match?
 
-We all need a companion right? So why not explore some of our amazing personalities that is just a press of button away.
+We all need a companion right? So why not explore some of our amazing personalities that is just a click of a button away.
 
 USER JOURNEY 
 AS A person interested in casual sex
@@ -16,7 +16,7 @@ WHEN they choose to “hook up” with the date
 THEN the date should receive an invitation email
 
 
-BUSINESS CONTEXT For many adults, trying to figure out if a person is right for them can sometimes be quite a task, it takes too much time, planning, and even research, hence it becomes inefficient, right there and then life feels like a real pain. With the adoption of Smasual, one can quickly locate a suiteable person that fits their criteria and instantly hook up with no strings attached, thereafter continue with there busy life feeling amazed after connecting for a short but memorable period of time.
+BUSINESS CONTEXT For many adults, trying to figure out if a person is right for them can sometimes be quite a task, it takes too much time, planning, and even research, hence it becomes inefficient, right there and then life feels like a real pain. With the adoption of Smasual, one can quickly locate a suiteable person that fits their criteria and instantly hook up with no strings attached, thereafter continuing with there busy life feeling amazed after connecting for a short but memorable period of time.
 
 
 ## Contributors
