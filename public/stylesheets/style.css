@@ -71,6 +71,24 @@ color: white;
   font-weight: bold;
 }
 
+.profile-picture{
+  height: 150px;
+  width: auto;
+}
+.buttonz{
+  background-color: #e91d62;
+  border-color: #e91d62;
+}
+.button-image-icon {
+  width: 40px;
+}
+.upload-buttons{
+  animation: colorchange 1s infinite;
+  border-color: #f72585;
+  background-color: #f72585;
+}
+
+
 .modal {
   color: black;
 }
@@ -112,6 +130,3 @@ color: white;
   color: white;
   background-color: #e91d63;
 }
-
-
-
