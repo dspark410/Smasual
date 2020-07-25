@@ -8,19 +8,22 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link href="stylesheets/style.css" rel="stylesheet">
 </head>
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/logout">
-          Logout
-        </a>
-      </div>
-    </div>
-  </nav>
+<body class="background-images-two">
+  <nav class="navbar" style="background-color: #e91d63">
+    <a href="/home" class="fat-nav">
+      <img src="/imgs/smasualLogo.jpg" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy">
+      <span>Smasual</span>
+      <span class="tagline">The best casual hook-up site. Smash casually.</span>
+    </a>
+    <a class="navbar-brand logout" href="/logout">
+      Logout
+    </a>
+</nav>
+  
   <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron home-jumbo">
       <h1>Welcome to Smasual</h1>
       <h3>Smash Casually</h3>
       <p class="user-profile"></p>
@@ -28,47 +31,47 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="card mb-4">
-          <div class="card-header">
-            Date Search
+          <div class="card-header" style="background-color: #e91d63">
+            <h3>Search for a Hot Date</h3>
           </div>
-          <div class="card-body">
-            <p>Looking for Dates in this Zip Code</p>
+          <div class="card-body" style="color: black;">
             <form method="post" action="/profiles">
-            <input name="zip" type="text" id="zip-search" class="form-control">
+              
             
+            <p>Prefer Dates with this Sexual Orientation</p>
             <select name="genderOrientation" class="custom-select orientation">
-              <option selected>Preferred Orientation</option>
+              <option disabled selected hidden>Preferred Orientation</option>
               <option value="Straight">Straight</option>
               <option value="Bisexual">Bisexual</option>
               <option value="Lesbian">Lesbian</option>
               <option value="Gay">Gay</option>
             </select>
-
-            <!-- Age Range -->
-            <p>Start Age</p>
-            <input name="startAge" type="text" id="startAge" class="form-control">
-            <p>End Age</p>
-            <input name="endAge" type="text" id="endAge" class="form-control">
+            <br/>
             <br/>
 
-            
-
-
-
-            
-
-            <br/>
-
+            <p>Prefer Dates of this Gender</p>
             <select name="gender" class="custom-select gender">
-              <option selected>Preferred Gender</option>
+              <option disabled selected hidden>Preferred Gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Other">Other</option>
             </select>
             
-            <br>
+            <br/>
+            <br/>
+
+
+            <!-- Age Range -->
+            <p>Searching for dates between the ages of <span><input name="startAge" type="text" id="startAge" class="form"></span> and <span> <input name="endAge" type="text" id="endAge" class="form"></span></p>
+            
+            <br/>
+
+            <p>Looking for Dates in this Zip Code  <span><input name="zip" type="text" id="zip-search" class="form"></span></p>
+            
+            <br/>
+           
             <div class="text-right">
-              <button type="submit" class="btn btn-primary btn-md" id="date-btn">
+              <button type="submit" class="btn btn-primary btn-md pink-btn" id="date-btn">
                 <span class="fa fa-search"></span> Search For a Hot Date</button>
             </div>
             </form>
@@ -76,20 +79,8 @@
         </div>
       </div>
     </div>
-    <!-- <div class="row">
-      <div class="col-lg-12">
-        <div class="card">
-          <div class="card-header">
-            Date Results
-          </div>
-          <div class="card-body" id="well-section">
-     
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>
-  <!-- Custom Script -->
+  
   <script src="js/home.js" type="text/javascript"></script>
 </body>
 </html>

@@ -70,6 +70,7 @@ color: white;
   width: 66px;
   font-weight: bold;
 }
+
 .profile-picture{
   height: 150px;
   width: auto;
@@ -85,4 +86,47 @@ color: white;
   animation: colorchange 1s infinite;
   border-color: #f72585;
   background-color: #f72585;
+}
+
+
+.modal {
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
+
+.fat-nav {
+  color: white;
+  font-size: 40px;
+  padding-left: 50px;
+}
+
+.norm-nav {
+  color: white;
+  font-size: 30px;
+  padding-left: 50px;
+}
+
+.tagline {
+  font-size: 20px;
+  color: #ffc1d6;
+  padding-left: 20px;
+
+}
+.logout {
+  color: white;
+  font-size: 20px;
+}
+
+.pink-btn {
+  color: white;
+  background-color: #e91d63;
+}
+
+.home-jumbo {
+  margin-top: 40px;
+  color: white;
+  background-color: #e91d63;
 }
