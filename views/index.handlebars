@@ -24,7 +24,14 @@
       <li class='profile-info'>
         
         <div class="row d-flex">
-          
+           <section>
+              <a class="btn btn-primary buttonz match-button" data-toggle="modal" data-target="#exampleModal" data-rid={{this.UserId}}
+              ><img class="button-image-icon" src="/imgs/icon.png">masual</a>
+          </section>
+          <section>
+            
+            <img class="profile-picture" src={{this.imageURL}} />
+          </section>
           <section>
             <p>Name</p>
             {{this.firstName}}
@@ -41,24 +48,13 @@
             <p>Gender Orientation</p>
             {{this.genderOrientation}}
           </section>
+           
           <section>
             <p>Biography</p>
             {{this.biography}}
           </section>
-          <section>
-
-            <img class="profile-picture" src={{this.imageURL}} />
-          </section>
-          <section>
-            <a class="btn btn-primary buttonz"><img class="button-image-icon" src="/imgs/icon.png">masual</a>
-
          
-
-            <button data-toggle="modal" data-target="#exampleModal" data-rid={{this.UserId}}
-              class="match-button">Match!</button>
-
-
-          </section>
+         
           <br><br><br><br><br>
         </div>
       </li>

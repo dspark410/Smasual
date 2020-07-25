@@ -36,7 +36,6 @@ app.get("/findEmail/:rid", function(req,res){
     where: {
        id: req.params.rid
     },
-    // include: [db.Profile],
     raw: true
   }).then(function(data){
     console.log(data)
