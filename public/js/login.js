@@ -28,7 +28,9 @@ $(document).ready(() => {
       email: email,
       password: password
     })
-      .then(() => {
+      .then((data) => {
+        //console.log(data)
+        localStorage.setItem("UserId", data.id)
         window.location.replace("/home");
         // If there's an error, log the error
       })
