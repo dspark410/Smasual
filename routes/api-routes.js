@@ -66,23 +66,16 @@ app.get("/api/user_data", (req, res) => {
   }
 });
 
-
-
-app.get("/api/profile_data"), (req, res) => {
-  console.log("profile_data: "+res.json);
-  // res.json({
-  //   firstName: req.profile.firstName,
-  //   age: req.profile.age,
-  //   gender: req.profile.gender,
-  //   genderOrientation: req.profile.genderOrientation,
-  //   zip: req.profile.zip,
-  //   biography: req.profile.biography
-  // });
-}
-
-
-
-
+app.get("/api/profile_data/:id", (req, res) => {
+  //console.log("profile_data: ", req.params.id);
+  db.Profile.findOne({
+    where: {
+      UserId: req.params.id
+    }
+  }).then(result => {
+    res.json(result)
+  })
+})
 
 };
 
