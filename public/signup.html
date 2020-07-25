@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Passport Authentication</title>
   <meta charset="UTF-8">
@@ -11,17 +10,18 @@
 
 <body>
   <nav class="navbar" style="background-color: #e91d63">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="/imgs/smasualLogo.jpg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-
+      <a href="/home" class="fat-nav">
+        <img src="/imgs/smasualLogo.jpg" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy">
+        <span>Smasual</span>
+        <span class="tagline">The best casual hook-up site. Smash casually.</span>
       </a>
-    </div>
   </nav>
+
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
+        <h2>Create a New Account</h2>
+        <p>It's quick and easy!</p>
         <form class="signup">
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
@@ -35,10 +35,10 @@
             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
             <span class="sr-only">Error:</span> <span class="msg"></span>
           </div>
-          <button href="/members" type="submit" class="btn btn-default">Sign Up</button>
+          <button href="/members" type="submit" class="btn btn-default pink-btn">Sign Up</button>
         </form>
         <br />
-        <p>Or log in <a href="/login">here</a></p>
+        <h4>Already have an account? Log in <a href="/login">here</a></h4>
       </div>
     </div>
   </div>
