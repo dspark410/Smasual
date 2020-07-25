@@ -68,8 +68,11 @@
               <input id="name" type="text" name="name">
             </p>
            
-              <p name="remail" class="remail"></p>
-          
+           <p class="hidden">
+              <label>Smashee's Email</label>
+              <input id="remail" class="remail" type="text" name="remail">
+            </p>
+
             <p>
               <label>Your Phone Number</label>
               <input id="phone" type="text" name="phone">
@@ -79,17 +82,14 @@
               <textarea id="message" name="message" rows="5"></textarea>
             </p>
             <p class="full">
-              <button id="sendmail" type="submit">Submit</button>
+              <button action="/home" id="sendmail" type="submit">Submit</button>
             </p>
           </form>
 
         </div>
       </div>
     </div>
-    <div class="modal-footer">
-      <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
-    </div>
+   
   </div>
 </div>
 </div>
@@ -105,11 +105,10 @@
 
     $.get("/findEmail/" + RID[0]).then((data) => {
       
-      $(".remail").text(data.data[0].email) 
+      $(".remail").val(data.data[0].email) 
 
-      //console.log("email: " + JSON.stringify(data.data[0].email))
+        
     })
-
   });
 
     

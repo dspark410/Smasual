@@ -73,7 +73,7 @@ app.post("/email", (req,res) => {
 
   let mailOptions = {
     from: "req.body.from", // sender address
-    to: 'dspark410@gmail.com', // list of receivers
+    to: req.body.remail, // list of receivers
     subject: 'Smasual Contact Request', // Subject line
     html: output // html body
 };
@@ -87,13 +87,12 @@ transporter.sendMail(mailOptions, (error, info) => {
   console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
   console.log("email sent")
+  console.log("remail: " + req.body.remail)
+  res.redirect("/home")
+
 });
     
 });
 }
-
-
-
-
 
 
