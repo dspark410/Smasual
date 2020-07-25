@@ -21,7 +21,7 @@ BUSINESS CONTEXT For many adults, trying to figure out if a person is right for 
 
 ## Contributors
 
-TanyaPoovaiah <tpoovaiah@gmail.com>
+Tanya Poovaiah <biddanda.tanya@gmail.com>
 
 Leon Carnagie <leonfross@gmail.com>
 
