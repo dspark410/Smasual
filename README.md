@@ -1,6 +1,6 @@
 # Smasual
 
-## Dscription
+## Description
 
 #Welcome to a whole new world of possibilities with this Smasual App.
 
