@@ -18,6 +18,7 @@ THEN the date should receive an invitation email
 
 BUSINESS CONTEXT For many adults, trying to figure out if a person is right for them can sometimes be quite a task, it takes too much time, planning, and even research, hence it becomes inefficient, right there and then life feels like a real pain. With the adoption of Smasual, one can quickly locate a suiteable person that fits their criteria and instantly hook up with no strings attached, thereafter continuing with there busy life feeling amazed after connecting for a short but memorable period of time.
 
+See a live demo [here](https://radiant-spire-72704.herokuapp.com/)
 
 ## Contributors
 
